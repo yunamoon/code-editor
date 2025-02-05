@@ -18,7 +18,7 @@ const CodeEditor = () => {
   };
 
   return (
-    <div className="text-white">
+    <div className="text-white w-[45%]">
       <LanguageSelector language={language} onSelector={onSelector} />
       <Editor
         height="75vh"

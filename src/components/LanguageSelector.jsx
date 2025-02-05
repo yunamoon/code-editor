@@ -61,6 +61,6 @@ const LanguageSelector = ({ language, onSelector }) => {
 export default LanguageSelector;
 
 LanguageSelector.propTypes = {
-  language: PropTypes.string.isRequired, // `language`는 반드시 string이어야 함
-  onSelector: PropTypes.func.isRequired, // `onSelector`는 반드시 함수여야 함
+  language: PropTypes.string.isRequired,
+  onSelector: PropTypes.func.isRequired,
 };
