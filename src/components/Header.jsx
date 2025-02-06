@@ -1,8 +1,11 @@
-const Hedader = () => {
+const Hedader = (handleSidebaOpen) => {
   return (
-    <div className="h-[70px] border border-b border-[#2E3243] flex justify-between items-center mr-[69px] ">
+    <div className="w-full h-[70px] border border-b border-[#2E3243] flex justify-between items-center pr-[69px] ">
       <div className="flex  gap-[15px] items-center cursor-pointer">
-        <div className="w-[66px] h-[70px] bg-[#8F00FF] flex items-center justify-center">
+        <div
+          onClick={handleSidebaOpen}
+          className="w-[66px] h-[70px] bg-[#8F00FF] flex items-center justify-center"
+        >
           <img src="/icons/menu.png" alt="Menu Icon"></img>
         </div>
         <p className="text-[#FFFFFF] font-medium">01. 첫 번째 파이썬 코드 </p>
