@@ -7,8 +7,10 @@ const LANGUAGE = [
   { id: 1, item: "typescript" },
   { id: 2, item: "python" },
   { id: 3, item: "java" },
-  { id: 4, item: "c#" },
+  { id: 4, item: "csharp" },
+  { id: 5, item: "php" },
 ];
+
 
 const LanguageSelector = ({ language, onSelector }) => {
   const [isOpen, setIsOpen] = useState(false);
