@@ -13,3 +13,57 @@
       transform: translateX(54px); /* 92px - 38px */
     }
   }
+  .floating-arrow {
+    font-size: 50px; /* 아이콘 크기 조정 */
+    color: rgba(212, 212, 212, 0.292); /* 아이콘 색상 */
+    animation: float 1.5s infinite ease-in-out; /* 애니메이션 적용 */
+  }
+  
+  /* 좌에서 우로 떠오르는 애니메이션 정의 */
+  @keyframes float {
+    0% {
+      transform: translateX(0) translateY(0); /* 시작 위치 */
+    }
+    50% {
+      transform: translateX(15px); /* 오른쪽으로 100px, 위로 20px 이동 */
+    }
+    100% {
+      transform: translateX(0) translateY(0); /* 원래 위치로 돌아옴 */
+    }
+  }
+
+  @keyframes bg-color-change {
+    0% {
+      background-color: #242735;
+    }
+    50% {
+      background-color: #8F00FF; /* 다른 색상으로 바뀌는 효과 */
+    }
+    100% {
+      background-color: #242735;
+    }
+  }
+  
+  .animate-correct-answer-bg {
+    animation: bg-color-change 2s infinite;
+  }
+  /* 애니메이션 정의 */
+@keyframes correct-answer {
+  0% {
+    transform: scale(1); /* 기본 크기 */
+    opacity: 0.8; /* 약간 흐림 */
+  }
+  50% {
+    transform: scale(1.05); /* 약간만 커짐 */
+    opacity: 1; /* 선명하게 */
+  }
+  100% {
+    transform: scale(1); /* 원래 크기로 돌아감 */
+    opacity: 0.8; /* 흐림 */
+  }
+}
+
+/* 애니메이션을 적용할 클래스 */
+.animate-correct-answer {
+  animation: correct-answer 2s infinite; /* 2초 간격으로 애니메이션 반복 */
+}

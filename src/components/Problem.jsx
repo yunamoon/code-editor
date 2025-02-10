@@ -1,33 +1,45 @@
-const Problem = () => {
+import { FaArrowRight } from "react-icons/fa";
+import { FaGreaterThan } from "react-icons/fa";
+
+const Problem = ({ data, isQna, setIsQna }) => {
   return (
-    <div className="w-[46%]   flex flex-col gap-4">
+    <div className={`${isQna ? "hidden" : "w-[46%]   flex flex-col gap-4"}`}>
       <div className="w-[130px] text-[#CA94F5] border border-[#CA94F5] py-2 px-3 rounded-[22px] ">
-        <p className=" text-center">컴파일 문제</p>
+        <p className=" text-center">파이썬</p>
       </div>
 
       <div>
-        <h1 className="font-bold text-[36px] mb-[18px]">
-          파이썬의 첫걸음: 출력문 사용하기
+        <h1 className="font-bold text-[36px] mb-[18px] flex items-end gap-5">
+          {data.title}
+          <button
+            onClick={() => setIsQna(!isQna)}
+            className="text-[16px] flex items-center gap-1 font-light mb-2 cursor-pointer hover:text-[#CA94F5] "
+          >
+            Q&A <FaGreaterThan />
+          </button>
         </h1>
-        <p className="text-[#DEDEE2]">
-          프로그래밍을 처음 배울 때 가장 먼저 접하는 것은 컴퓨터에게 원하는
-          내용을 전달하는 방법입니다. 파이썬에서는 print() 함수를 사용하여
-          화면에 원하는 문장을 출력할 수 있습니다. 이를 통해 사용자는 프로그램이
-          어떻게 동작하는지 직접 확인할 수 있으며, 디버깅 과정에서도 유용하게
-          활용됩니다. 이번 문제에서는 print() 함수를 사용하여 특정한 문장을
-          출력하는 프로그램을 작성해야 합니다. 기본적인 문법을 익히고, 코드를
-          실행하여 원하는 결과가 화면에 나타나는지를 확인하는 것이 목표입니다.
-          프로그래밍의 첫 단추를 끼우는 과정에서, 작은 성공의 경험을 통해
-          자신감을 얻어보세요!
-        </p>
+        <p className="text-[#DEDEE2]">{data.description}</p>
       </div>
 
       <div className="mt-4">
         <h1 className="font-bold text-[28px] mb-[18px]">입출력 조건</h1>
         <p className="text-[#DEDEE2]">
-          ● 입력: 입력은 없습니다. <br />● 출력: 화면에 출력할 특정 문장이
-          주어집니다. 예를 들어, "Hello, World!"와 같은 문장을 출력해야 합니다.
+          ● 입력: {data.input}
+          <br />● 출력: {data.output}
         </p>
+      </div>
+
+      <div className="mt-4">
+        <h1 className="font-bold text-[28px] mb-[18px]">입출력 예시</h1>
+        <div className="flex gap-12 items-center">
+          <div className="bg-[#242735] border border-[#3F404C] h-[200px] w-1/2 rounded-[10px] flex items-center justify-center">
+            <p className="text-[#DEDEE2] text-[20px]">{data.example_input}</p>
+          </div>
+          <FaArrowRight className="text-[35px] text-[#adadb0]" />
+          <div className="bg-[#242735] border border-[#3F404C] h-[200px] w-1/2 rounded-[10px] flex items-center justify-center">
+            <p className="text-[#DEDEE2] text-[20px]">{data.example_output}</p>
+          </div>
+        </div>
       </div>
     </div>
   );
